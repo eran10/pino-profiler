@@ -1,0 +1,31 @@
+{
+  "name": "pino-profiler",
+  "version": "0.1.0",
+  "description": "adding profiling option for pino logger",
+  "main": "index.js",
+  "engines": {
+    "node": ">=4.2.4"
+  },
+  "scripts": {
+    "test": "mocha --reporter spec"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/eran10/pino-profiler.git"
+  },
+  "keywords": [
+    "pino",
+    "logger",
+    "profiler"
+  ],
+  "author": "Eran Nagar <erannagar1@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/eran10/pino-profiler/issues"
+  },
+  "homepage": "https://github.com/eran10/pino-profiler#readme",
+  "devDependencies": {
+    "chai": "^4.1.2",
+    "mocha": "^5.2.0"
+  }
+}
