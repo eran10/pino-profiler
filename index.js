@@ -1,7 +1,7 @@
 'use strict';
 
 class Profiler {
-    constractor(logger) {
+    constructor(logger) {
         this.profilers = {};
         this.logger = logger;
     }
@@ -11,7 +11,7 @@ class Profiler {
         if (this.profilers[id]) {
             const timeEnd = this.profilers[id];
             delete this.profilers[id];
-            return this.logger['info'](`${id} -- durationMs -- ${time - timeEnd}`);
+            return this.logger['info']({ id, start : time, end:  timeEnd}, `Completed ${id} in ${time - timeEnd} ms`);
         }
 
         this.profilers[id] = time;
