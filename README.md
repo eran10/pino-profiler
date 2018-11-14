@@ -5,7 +5,7 @@ A small library that adds profiling option to pino logger
 
 ## Installation
 
-  `npm install pino-profiler`
+  `npm install pino-profiler` or `yarn add pino-profiler`
 
 ## Usage
 #### basic example :
