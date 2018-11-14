@@ -1,22 +1,20 @@
 'use strict';
 
-class Profiler {
-    constructor(logger) {
-        this.profilers = {};
-        this.logger = logger;
-    }
-
-    profile(id) {
+function addProfiler(logger) {
+    const profilers = {};
+    function profile(id) {
         const time = Date.now();
-        if (this.profilers[id]) {
-            const timeEnd = this.profilers[id];
-            delete this.profilers[id];
-            return this.logger['info']({ id, start : time, end:  timeEnd}, `Completed ${id} in ${time - timeEnd} ms`);
+        if (profilers[id]) {
+            const timeEnd = profilers[id];
+            delete profilers[id];
+            logger['info']({id, start: time, end: timeEnd}, `Completed ${id} in ${time - timeEnd} ms`);
+        } else {
+            profilers[id] = time;
         }
-
-        this.profilers[id] = time;
-        return this.logger;
     }
+
+    logger.profile = profile;
+    return logger;
 }
 
-module.exports = Profiler;
+module.exports = addProfiler;
